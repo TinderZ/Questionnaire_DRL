@@ -6,11 +6,10 @@ age_range = np.arange(18, 51)
 
 
 def original_probability_density(age):
-    return -0.0025 * age ** 2 + 0.125 * age + 2.3
+    return -0.0025 * age ** 2 + 0.125 * age + 1
 
 
 def piecewise_probability_density(age):
-    # ... (与原始代码相同)
     probability_at_20 = original_probability_density(20)  # 计算20岁处的概率
     if age < 20:
         return probability_at_20  # 20岁以下都用20岁处的概率
@@ -33,13 +32,14 @@ def get_age_distribution():
     # return age_distribution
     return age_distribution, [{'age': age, 'probability': prob} for age, prob in age_distribution.items()]
 
+
 # ages_cumulative = np.cumsum([occ['probability'] for occ in ages])
 # 可视化图片
 
-# plt.figure(figsize=(10, 6))
-# plt.bar(age_range, probabilities, color='blue', edgecolor='black')
-# plt.xlabel('Age')
-# plt.ylabel('Probability')
-# plt.title('Age Distribution with Piecewise Function')
-# plt.grid(True)
-# plt.show()
+plt.figure(figsize=(10, 6))
+plt.bar(age_range, probabilities, color='blue', edgecolor='black')
+plt.xlabel('Age')
+plt.ylabel('Probability')
+plt.title('Age Distribution with Piecewise Function')
+plt.grid(True)
+plt.show()

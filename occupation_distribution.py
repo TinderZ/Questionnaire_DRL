@@ -111,8 +111,8 @@ occupations = [
         "name": occupation["name"],
         "category": category_name,
         "probability": occupation["probability"],
-        "min_education": occupation["min_education"],  # 添加默认值以防某些职业没有这些字段
-        "max_education": occupation["max_education"]  # 添加默认值以防某些职业没有这些字段
+        "min_education": occupation["min_education"],
+        "max_education": occupation["max_education"]
     }
     for category_name, category_occupations in occupation_categories.items()
     for occupation in category_occupations
